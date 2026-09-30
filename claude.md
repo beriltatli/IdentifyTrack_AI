@@ -1,1 +1,0 @@
-kod yazmayı yeni öğrenen birine anlatır gibi bu projenin kodlarını, dosyalarını oluştururken terminalde neyin neden yapıldığını adım adım anlatarak yaz. 
