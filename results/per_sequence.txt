@@ -1,0 +1,14 @@
+per-sequence, real detections (MOT17-09 = development sequence, used while debugging)
+
+sequence  method          HOTA  DetA  AssA  IDF1  IDSW     40+ gap
+02        kalman_iou      30.9  35.7  27.0  38.4   372        6/39
+02        ours            30.0  35.7  25.3  36.6   363        4/39
+04        kalman_iou      60.0  63.4  56.8  72.5   172        5/17
+04        ours            56.5  63.4  50.3  64.8   262        3/17
+09        kalman_iou      48.2  54.6  42.7  58.9    48         0/6
+09        ours            42.1  54.6  32.5  48.2    43         0/6
+02+04     kalman_iou      52.9  55.0  51.0  63.5   544       11/56
+02+04     ours            50.0  55.0  45.5  57.4   625        7/56
+
+40+ bin gap lengths (frames): n=62 median=84 p25=66 p75=125 max=279  (30 fps => median 2.8 s)
+reappearances excluded (no prior id): 14 | never re-acquired among all gaps: 46 of 234

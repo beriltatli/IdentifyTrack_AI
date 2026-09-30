@@ -1,0 +1,49 @@
+# One file controls every run. Values marked LOCKED were fixed before any result was seen and
+# must not be tuned against the evaluation sequences.
+seed: 0
+
+data:
+  root: data/MOT17
+  sequences: [MOT17-02, MOT17-04, MOT17-09]   # static camera: no camera-motion compensation
+  min_visibility: 0.25     # LOCKED: GT boxes below this count as occluded for gap analysis / oracle
+
+detector:                  # frozen black box; never trained, never tuned
+  backend: mot17_public    # mot17_public = benchmark-provided det.txt (SDP) | yolo = ultralytics
+  yolo_weights: data/weights/yolov8s.pt   # sha256 1f47a78bf100391c... (ultralytics assets v8.3.0), frozen
+  yolo_imgsz: 1280
+  conf_floor: 0.10         # LOCKED: detections below this never exist
+  person_class: 0
+
+output_conf: 0.30          # LOCKED: every tracker emits exactly the detections >= this (keeps DetA fixed)
+
+reid:
+  backend: color_hist      # color_hist (no torch) | resnet18 (ImageNet backbone, needs torch)
+  stripes: 3
+  bins: 8
+
+eval:
+  swap_window: 5
+  iou_match: 0.5
+
+baselines:
+  greedy_iou: {iou_thr: 0.3}
+  kalman_iou: {iou_thr: 0.3, max_age: 100, min_hits: 3}
+  appearance_only: {app_gate: 0.30, max_age: 100, gallery_size: 30}
+
+tracker:                   # TrackerConfig fields; output_conf is injected from above
+  n_init: 3
+  lost_buffer: 100
+  motion_gate: 0.0         # ACTIVE tracks: IoU only (<=0 disables Mahalanobis). Mahalanobis admitted look-alike
+                           # neighbours that IoU rejects (found while debugging on MOT17-09).
+  lost_motion_gate: 9.4877 # LOST tracks: chi2(4) 95% Mahalanobis OR IoU - their covariance is already inflated
+  app_gate: 0.30           # ~p99 of same-identity cosine distance (color_hist); calibrated on the eval
+                           # sequences' GT identities, no held-out sequence -> listed as a limitation
+  lambda_motion: 0.5
+  motion_iou_gate: 0.3     # pair is motion-feasible if Mahalanobis OR IoU(pred box) accepts it
+  tentative_iou: 0.3
+  stage2_iou: 0.3
+  use_appearance: true
+  gallery_size: 30
+  gallery_policy: gated
+  gallery_update_conf: 0.6
+  gallery_occ_iou: 0.3

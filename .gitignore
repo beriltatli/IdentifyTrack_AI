@@ -1,0 +1,25 @@
+# Sanal ortam: pip ile kurulan paketler burada durur. Çok büyüktür ve
+# requirements dosyasından yeniden kurulabilir, bu yüzden Git'e koymuyoruz.
+.venv/
+
+# Python'un kendiliğinden ürettiği geçici dosyalar
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Hesaplanıp yeniden üretilebilen önbellek (cache) dosyaları
+cache/
+
+# İndirilen veri seti ve model ağırlıkları (çok büyük dosyalar)
+data/MOT17/
+data/weights/
+data/wheels/
+
+# İndirme / kurulum sırasında oluşan log dosyaları
+*.log
+
+# macOS'un klasörlere bıraktığı gereksiz dosya
+.DS_Store
+
+# NOT: Videoları (.mp4 vb.) bilerek buraya YAZMADIK.
+# Yani figures/ içindeki videolar Git tarafından takip edilecek.

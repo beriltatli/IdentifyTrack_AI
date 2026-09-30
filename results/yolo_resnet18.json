@@ -1,0 +1,202 @@
+{
+ "greedy_iou": {
+  "name": "greedy_iou",
+  "HOTA": 39.728648922850326,
+  "DetA": 42.54326624831372,
+  "AssA": 37.70016508853984,
+  "IDF1": 41.95785004560461,
+  "MOTA": 38.177798301218814,
+  "IDSW": 975,
+  "long_gap_recovered": 1,
+  "long_gap_n": 55,
+  "long_gap_rate": 1.8181818181818181,
+  "gap_bins": {
+   "1-5": [
+    12,
+    43
+   ],
+   "6-15": [
+    6,
+    58
+   ],
+   "16-39": [
+    4,
+    60
+   ],
+   "40+": [
+    1,
+    55
+   ]
+  },
+  "taxonomy": {
+   "swap": 6,
+   "drift": 60,
+   "gap-reassign": 289,
+   "other": 620
+  },
+  "swap_incidents": 3,
+  "frag_median": 5.0,
+  "frag_p90": 17.0,
+  "fps": 413.53058293933003
+ },
+ "kalman_iou": {
+  "name": "kalman_iou",
+  "HOTA": 43.54200343833974,
+  "DetA": 42.54326624831372,
+  "AssA": 45.016234011474424,
+  "IDF1": 49.73242608421919,
+  "MOTA": 38.86906511061669,
+  "IDSW": 481,
+  "long_gap_recovered": 6,
+  "long_gap_n": 55,
+  "long_gap_rate": 10.909090909090908,
+  "gap_bins": {
+   "1-5": [
+    18,
+    43
+   ],
+   "6-15": [
+    13,
+    58
+   ],
+   "16-39": [
+    17,
+    60
+   ],
+   "40+": [
+    6,
+    55
+   ]
+  },
+  "taxonomy": {
+   "swap": 10,
+   "drift": 102,
+   "gap-reassign": 128,
+   "other": 241
+  },
+  "swap_incidents": 5,
+  "frag_median": 3.0,
+  "frag_p90": 7.0,
+  "fps": 1060.2014131507767
+ },
+ "appearance_only": {
+  "name": "appearance_only",
+  "HOTA": 38.4928231488615,
+  "DetA": 42.54326624831372,
+  "AssA": 35.25234205654108,
+  "IDF1": 42.21775593061643,
+  "MOTA": 38.670360886052926,
+  "IDSW": 623,
+  "long_gap_recovered": 9,
+  "long_gap_n": 55,
+  "long_gap_rate": 16.363636363636363,
+  "gap_bins": {
+   "1-5": [
+    17,
+    43
+   ],
+   "6-15": [
+    14,
+    58
+   ],
+   "16-39": [
+    15,
+    60
+   ],
+   "40+": [
+    9,
+    55
+   ]
+  },
+  "taxonomy": {
+   "swap": 22,
+   "drift": 442,
+   "gap-reassign": 10,
+   "other": 149
+  },
+  "swap_incidents": 11,
+  "frag_median": 3.0,
+  "frag_p90": 7.0,
+  "fps": 733.5121936824886
+ },
+ "ours": {
+  "name": "ours",
+  "HOTA": 44.256460444903226,
+  "DetA": 42.54326624831372,
+  "AssA": 46.465154903873916,
+  "IDF1": 50.55088747366637,
+  "MOTA": 39.00200103550089,
+  "IDSW": 386,
+  "long_gap_recovered": 6,
+  "long_gap_n": 55,
+  "long_gap_rate": 10.909090909090908,
+  "gap_bins": {
+   "1-5": [
+    18,
+    43
+   ],
+   "6-15": [
+    24,
+    58
+   ],
+   "16-39": [
+    22,
+    60
+   ],
+   "40+": [
+    6,
+    55
+   ]
+  },
+  "taxonomy": {
+   "swap": 12,
+   "drift": 169,
+   "gap-reassign": 65,
+   "other": 140
+  },
+  "swap_incidents": 6,
+  "frag_median": 2.0,
+  "frag_p90": 6.0,
+  "fps": 286.48679085098746
+ },
+ "ours_stage2_off": {
+  "name": "ours",
+  "HOTA": 43.30948939460496,
+  "DetA": 42.54326624831372,
+  "AssA": 44.52200112994529,
+  "IDF1": 49.77601278543236,
+  "MOTA": 38.93763206134643,
+  "IDSW": 432,
+  "long_gap_recovered": 7,
+  "long_gap_n": 55,
+  "long_gap_rate": 12.727272727272727,
+  "gap_bins": {
+   "1-5": [
+    18,
+    43
+   ],
+   "6-15": [
+    26,
+    58
+   ],
+   "16-39": [
+    17,
+    60
+   ],
+   "40+": [
+    7,
+    55
+   ]
+  },
+  "taxonomy": {
+   "swap": 12,
+   "drift": 226,
+   "gap-reassign": 57,
+   "other": 137
+  },
+  "swap_incidents": 6,
+  "frag_median": 2.0,
+  "frag_p90": 6.0,
+  "fps": null
+ }
+}
